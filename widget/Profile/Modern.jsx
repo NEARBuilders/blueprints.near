@@ -3,7 +3,7 @@ const { Root } = VM.require("${config_account}/widget/Profile.Modern.Root") || {
 };
 
 const { Button, LinkTree, Hashtag } = VM.require(
-  "${config_account}/widget/Components",
+  "${config_account}/widget/Components"
 ) || {
   Button: () => <></>,
   LinkTree: () => <></>,
@@ -15,7 +15,7 @@ const { SocialSDK } = VM.require("${config_account}/widget/sdk.social") || {
 };
 
 const { FollowStats } = VM.require(
-  "${config_account}/widget/Components.Profile.FollowStats",
+  "${config_account}/widget/Components.Profile.FollowStats"
 ) || {
   FollowStats: () => <></>,
 };
@@ -41,6 +41,9 @@ const profileTags = Object.keys(profile.tags || []);
 const theme = profile.profileTheme ?? "light";
 const font = profile.profileFont ?? "InterVariable";
 const activeColor = profile.profileActiveColor ?? "#E93D82";
+
+// follow
+const followStats = SocialSDK.followStatus(accountId, context.accountId);
 
 const ProfileImagesContainer = styled.div`
   position: relative;
@@ -241,7 +244,7 @@ return (
           <Button
             onClick={() =>
               clipboard.writeText(
-                `${config_account}/widget/Profile?accountId=${accountId}`,
+                `${config_account}/widget/Profile?accountId=${accountId}`
               )
             }
           >
@@ -297,13 +300,12 @@ return (
             />
           ) : (
             <>
-              <Widget
-                src={"${config_account}/widget/Components.Profile.FollowButton"}
-                loading=""
-                props={{
-                  accountId: accountId,
-                }}
-              />
+              <Button
+                variant={followStats === "Following" ? "outline" : "primary"}
+                onClick={() => SocialSDK.follow(accountId, context.accountId)}
+              >
+                {followStats}
+              </Button>
               <Button onClick={() => SocialSDK.poke(accountId)}>👉 Poke</Button>
             </>
           )}

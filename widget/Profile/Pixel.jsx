@@ -3,7 +3,7 @@ const { Root } = VM.require("${config_account}/widget/Profile.Pixel.Root") || {
 };
 
 const { Button, Hashtag, LinkTree } = VM.require(
-  "${config_account}/widget/Components.Pixel",
+  "${config_account}/widget/Components.Pixel"
 ) || {
   Button: () => <></>,
   Hashtag: () => <></>,
@@ -19,7 +19,7 @@ const { SocialSDK } = VM.require("${config_account}/widget/sdk.social") || {
 };
 
 const { CopyIcon2, EditIcon2, LinkIcon2 } = VM.require(
-  "${config_account}/widget/Icons",
+  "${config_account}/widget/Icons"
 ) || {
   CopyIcon2: () => <></>,
   EditIcon2: () => <></>,
@@ -43,6 +43,9 @@ const theme = profile.profileTheme ?? "light";
 const font = profile.profileFont ?? "InterVariable";
 const accentFont = profile.profileAccentFont ?? "Pixelify Sans";
 const activeColor = profile.profileActiveColor ?? "#E93D82";
+
+// follow
+const followStats = SocialSDK.followStatus(accountId, context.accountId);
 
 const ProfileImagesContainer = styled.div`
   position: relative;
@@ -243,11 +246,12 @@ return (
             />
           ) : (
             <>
-              <Widget
-                src="${config_account}/widget/Components.Pixel.FollowButton"
-                loading=""
-                props={{ accountId }}
-              />
+              <Button
+                variant={followStats === "Following" ? "" : "primary"}
+                onClick={() => SocialSDK.follow(accountId, context.accountId)}
+              >
+                {followStats}
+              </Button>
               <Button onClick={() => SocialSDK.poke(accountId)}>👉 Poke</Button>
             </>
           )}
@@ -259,7 +263,7 @@ return (
               style={{ padding: "12px 14px" }}
               onClick={() =>
                 clipboard.writeText(
-                  `${config_account}/widget/Profile?accountId=${accountId}`,
+                  `${config_account}/widget/Profile?accountId=${accountId}`
                 )
               }
             >

@@ -33,6 +33,8 @@ const profileTags = Object.keys(profile.tags || []);
 const theme = profile.profileTheme ?? "light";
 const font = profile.profileFont ?? "InterVariable";
 const activeColor = profile.profileActiveColor ?? "#E93D82";
+// follow
+const followStats = SocialSDK.followStatus(accountId, context.accountId);
 const ProfileImagesContainer = styled.div`
   position: relative;
   overflow-x: clip;
@@ -261,13 +263,12 @@ return (
             />
           ) : (
             <>
-              <Widget
-                src={"bos.workspace/widget/Components.Profile.FollowButton"}
-                loading=""
-                props={{
-                  accountId: accountId,
-                }}
-              />
+              <Button
+                variant={followStats === "Following" ? "outline" : "primary"}
+                onClick={() => SocialSDK.follow(accountId, context.accountId)}
+              >
+                {followStats}
+              </Button>
               <Button onClick={() => SocialSDK.poke(accountId)}>👉 Poke</Button>
             </>
           )}
