@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "bos-workspace": "^1.0.0-alpha.4"
+  },
+  "scripts": {
+    "dev": "bos-workspace dev"
+  }
+}
