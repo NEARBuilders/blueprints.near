@@ -11,6 +11,6 @@ jobs:
       app-name: "blueprints.near"
       deploy-account-address: blueprints.near
       signer-account-address: blueprints.near
-      signer-public-key: ed25519:GTZpJWYSkDkwGGLPFDagS2uMeFSP7eVirYXwhQEMdoxj
+      signer-public-key: ed25519:1Yn61zBjJsXopnc72bQut7m37wCL3gmUZsJenNQLWac
     secrets:
       SIGNER_PRIVATE_KEY: ${{ secrets.SIGNER_PRIVATE_KEY }}
