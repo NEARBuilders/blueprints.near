@@ -27,7 +27,7 @@ const item = {
 const link =
   props.link ??
   props.fullPostLink ??
-  `/mob.near/widget/MainPage.N.Post.Page?accountId=${accountId}&blockHeight=${blockHeight}`;
+  `/${alias_mob}/widget/MainPage.N.Post.Page?accountId=${accountId}&blockHeight=${blockHeight}`;
 
 const Wrapper = styled.div`
   background: var(--post-bg);
@@ -182,7 +182,7 @@ const contentWidget = (
         style={{ minHeight: "100px" }}
       />
     }
-    src="mob.near/widget/MainPage.N.Post.Content"
+    src="${alias_mob}/widget/MainPage.N.Post.Content"
     props={{
       content,
       raw,
@@ -206,7 +206,7 @@ return (
       <div className="left">
         <Widget
           loading=""
-          src="mob.near/widget/MainPage.N.Post.Left"
+          src="${alias_mob}/widget/MainPage.N.Post.Left"
           props={{ accountId, groupId }}
         />
       </div>
@@ -242,7 +242,7 @@ return (
           <div className="buttons d-flex align-items-center gap-4 flex-wrap">
             <Widget
               loading=""
-              src="mob.near/widget/N.CommentButton"
+              src="${alias_mob}/widget/N.CommentButton"
               props={{
                 disabled: permissions.disableComment,
                 onClick: () => State.update({ showReply: !state.showReply }),
@@ -250,7 +250,7 @@ return (
             />
             <Widget
               loading=""
-              src="mob.near/widget/N.RepostButton"
+              src="${alias_mob}/widget/N.RepostButton"
               props={{
                 disable: permissions.disableRepost,
                 notifyAccountId,
@@ -261,7 +261,7 @@ return (
             />
             <Widget
               loading=""
-              src="mob.near/widget/N.LikeButton"
+              src="${alias_mob}/widget/N.LikeButton"
               props={{
                 notifyAccountId,
                 item,
@@ -269,7 +269,7 @@ return (
             />
             <Widget
               loading=""
-              src="mob.near/widget/MainPage.N.Post.ShareButton"
+              src="${alias_mob}/widget/MainPage.N.Post.ShareButton"
               props={{ accountId, blockHeight, postType: "post", groupId }}
             />
           </div>

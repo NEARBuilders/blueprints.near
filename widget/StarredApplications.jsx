@@ -58,7 +58,7 @@ const renderItem = (widgetSrc) => {
             style={{ width: "3em", height: "3em" }}
           />
         }
-        src="mob.near/widget/WidgetImage"
+        src="${alias_mob}/widget/WidgetImage"
         props={{
           tooltip: true,
           accountId,

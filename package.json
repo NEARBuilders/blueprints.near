@@ -1,8 +1,18 @@
 {
-  "dependencies": {
-    "bos-workspace": "^1.0.0-alpha.4"
-  },
+  "name": "blueprints.near",
+  "version": "0.0.0",
+  "description": "",
+  "author": "nearbuilders",
+  "license": "MIT",
   "scripts": {
-    "dev": "bos-workspace dev"
+    "bw": "bos-workspace",
+    "dev": "bw dev -n testnet",
+    "dev:testnet": "bw dev -n testnet",
+    "build": "bw build",
+    "build:testnet": "bw build -n testnet"
+  },
+  "devDependencies": {
+    "bos-workspace": "^1.0.0-alpha",
+    "prettier": "^2.8.8"
   }
 }

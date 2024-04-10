@@ -118,7 +118,7 @@ return (
       <Widget
         loading=""
         key={contractId}
-        src="mob.near/widget/N.NftCollection"
+        src="${alias_mob}/widget/N.NftCollection"
         props={{ accountId, contractId }}
       />
     ))}

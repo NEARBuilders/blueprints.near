@@ -31,7 +31,7 @@ const children = props.children ?? numAccounts;
 return numAccounts > 0 ? (
   <Widget
     loading={children}
-    src="mob.near/widget/N.Common.OverlayTrigger"
+    src="${alias_mob}/widget/N.Common.OverlayTrigger"
     props={{
       popup: (
         <div
@@ -41,7 +41,7 @@ return numAccounts > 0 ? (
           {faces.slice(0, limit).map((accountId, i) => (
             <Fragment key={i}>
               <Widget
-                src="mob.near/widget/N.ProfileLine"
+                src="${alias_mob}/widget/N.ProfileLine"
                 props={{ accountId, link: false }}
               />
               <br />

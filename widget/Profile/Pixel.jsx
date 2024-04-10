@@ -177,7 +177,7 @@ return (
     <ProfileImagesContainer>
       <BackgroundImage>
         <Widget
-          src="mob.near/widget/Image"
+          src="${alias_mob}/widget/Image"
           props={{
             image: profile.backgroundImage,
             fallbackUrl:
@@ -187,7 +187,7 @@ return (
       </BackgroundImage>
       <ProfileImage>
         <Widget
-          src="mob.near/widget/Image"
+          src="${alias_mob}/widget/Image"
           props={{
             image: profile.image,
             fallbackUrl:
@@ -204,7 +204,7 @@ return (
               {profile.name}
               <Widget
                 loading={""}
-                src="mob.near/widget/Checkmark"
+                src="${alias_mob}/widget/Checkmark"
                 props={{ accountId }}
               />
             </ProfileName>
@@ -213,7 +213,7 @@ return (
               <span onClick={() => clipboard.writeText(accountId)}>
                 <Widget
                   loading={content}
-                  src="mob.near/widget/N.Common.OverlayTrigger"
+                  src="${alias_mob}/widget/N.Common.OverlayTrigger"
                   props={{
                     popup: <div>Copy AccountId</div>,
                     children: <CopyIcon2 theme={theme} />,

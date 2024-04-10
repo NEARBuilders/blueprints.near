@@ -235,7 +235,7 @@ const gifSearchWidget = useMemo(
   () =>
     gifSearch ? (
       <Widget
-        src="mob.near/widget/N.GifSearch"
+        src="${alias_mob}/widget/N.GifSearch"
         props={{
           onHide: () => setGifSearch(false),
           onSelect: (gif) => {
@@ -255,7 +255,7 @@ return (
     <div className="left">
       <Widget
         loading=""
-        src="mob.near/widget/MainPage.N.Post.Left"
+        src="${alias_mob}/widget/MainPage.N.Post.Left"
         props={{ accountId: context.accountId }}
       />
     </div>
@@ -267,7 +267,7 @@ return (
         {markdownEditor ? (
           <Widget
             key={`markdown-editor-${markdownEditor}`}
-            src="mob.near/widget/MarkdownEditorIframe"
+            src="${alias_mob}/widget/MarkdownEditorIframe"
             props={{
               initialText: state.text,
               onChange,
@@ -290,7 +290,7 @@ return (
         {autocompleteEnabled && state.showAccountAutocomplete && (
           <div className="pt-1 w-100 overflow-hidden">
             <Widget
-              src="mob.near/widget/AccountAutocomplete"
+              src="${alias_mob}/widget/AccountAutocomplete"
               props={{
                 term: state.text.split("@").pop(),
                 onSelect: autoCompleteAccountId,

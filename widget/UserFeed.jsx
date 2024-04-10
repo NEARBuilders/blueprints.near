@@ -135,7 +135,7 @@ const renderRepost = (a) => {
           Reposted by{" "}
           <Widget
             loading={a.accountId}
-            src="mob.near/widget/N.ProfileLine"
+            src="${alias_mob}/widget/N.ProfileLine"
             props={{
               accountId: a.accountId,
               hideImage: true,
@@ -168,7 +168,7 @@ const renderItem = (item) =>
 
 return (
   <Widget
-    src="mob.near/widget/MergedIndexFeed"
+    src="${alias_mob}/widget/MergedIndexFeed"
     props={{ index, renderItem, filter: props.filter, threshold: 800 }}
   />
 );

@@ -30,7 +30,7 @@ const InlineUser = ({ accountId }) => {
   return (
     <div className="d-flex gap-1 align-items-center text-truncate">
       <Widget
-        src="mob.near/widget/ProfileImage"
+        src="${alias_mob}/widget/ProfileImage"
         props={{
           accountId,
           style: { width: 16, objectFit: "cover" },
@@ -75,7 +75,7 @@ return (
     >
       <div className="d-flex gap-3 p-3 w-100 overflow-auto">
         <Widget
-          src="mob.near/widget/Image"
+          src="${alias_mob}/widget/Image"
           props={{
             image: image,
             style: {
@@ -110,7 +110,7 @@ return (
             <i className="bi bi-time"></i>{" "}
             <Widget
               loading=""
-              src="mob.near/widget/TimeAgo"
+              src="${alias_mob}/widget/TimeAgo"
               props={{ blockHeight: blockHeight }}
             />
           </p>
@@ -119,7 +119,7 @@ return (
     </a>
     <div className="d-flex justify-content-between">
       <CardButton
-        href={`https://near.social/mob.near/widget/WidgetSource?src=${widgetPath}`}
+        href={`https://near.social/${alias_mob}/widget/WidgetSource?src=${widgetPath}`}
         target="_blank"
         style={{ borderRadius: "0 0 0 1rem" }}
       >

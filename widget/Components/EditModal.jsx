@@ -342,7 +342,7 @@ return (
                   <label>Profile Image</label>
                   <div className="d-flex align-items-center gap-1">
                     <Widget
-                      src="buildhub.near/widget/components.profile.ImageUploader"
+                      src="${alias_builddao}/widget/components.profile.ImageUploader"
                       loading=""
                       props={{
                         image: profile.image,
@@ -355,7 +355,7 @@ return (
                   <label>Background Image</label>
                   <div className="d-flex align-items-center gap-1">
                     <Widget
-                      src="buildhub.near/widget/components.profile.ImageUploader"
+                      src="${alias_builddao}/widget/components.profile.ImageUploader"
                       loading=""
                       props={{
                         image: profile.backgroundImage,
